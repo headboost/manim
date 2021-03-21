@@ -95,4 +95,46 @@ class DescribeTangentLine(GraphScene):
 
 ![DescribeTangentLine](https://user-images.githubusercontent.com/80928294/111892378-4b3fa600-8a3e-11eb-9216-e886da5fa818.gif)
 
+```python
+class MoveTangentLine(GraphScene):
+    CONFIG={
+        "func": lambda x:x**3,
+        "d_func": lambda x:3*x**2,
+        "stroke_width":3,
+        "dot_radius": 0.05,
+        "tangent_line_color": YELLOW,
+        "length_of_tangentline": 8,
+        }
+    def construct(self):
+        self.setup_axes()
+        curveA=self.get_graph(
+            self.func,
+            stroke_width=self.stroke_width,
+            )
+        line=VMobject()
+        dot_start=Dot(radius=self.dot_radius).move_to(self.coords_to_point(0,self.func(0)))
+        # add updater to tangent line
+        line.add_updater(self.get_derivative_updater(dot_start))
+        self.add(curveA, line, dot_start)
+
+        self.move_dot(
+            dot_start,  # put a dot to move
+            0.0001,     # where a dot starts from
+            -1.2,         # where a dot to go
+            run_time=3
+            )
+        self.wait()
+        self.move_dot(
+            dot_start,  # put a dot to move
+            -1.2,     # where a dot starts from
+            1.2,         # where a dot to go
+            run_time=3
+            )
+        self.wait()
+
+        # remove updater after the animation
+        line.clear_updaters()
+```
+
+![MoveTangentLine](https://user-images.githubusercontent.com/80928294/111892451-00725e00-8a3f-11eb-9e4c-cb1850138b76.gif)
 
