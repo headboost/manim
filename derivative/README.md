@@ -109,8 +109,7 @@ class SplitDerivativeCubes(ThreeDScene):
 ![SplitDerivativeCubes](https://user-images.githubusercontent.com/80928294/111894427-f441cd00-8a4d-11eb-8599-33fb468ad3cb.gif)
 
 
-
-
+## describe_tangent_line()
 
 ```python
 class DescribeTangentLine(GraphScene):
@@ -158,6 +157,8 @@ class DescribeTangentLine(GraphScene):
 
 ![DescribeTangentLine](https://user-images.githubusercontent.com/80928294/111892378-4b3fa600-8a3e-11eb-9216-e886da5fa818.gif)
 
+## move_tangent_line()
+
 ```python
 class MoveTangentLine(GraphScene):
     CONFIG={
@@ -200,6 +201,8 @@ class MoveTangentLine(GraphScene):
 ```
 
 ![MoveTangentLine](https://user-images.githubusercontent.com/80928294/111892451-00725e00-8a3f-11eb-9e4c-cb1850138b76.gif)
+
+## draw_derivative_function()
 
 ```python
 class DrawDerivativeFunction(GraphScene):
