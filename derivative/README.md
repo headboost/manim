@@ -49,7 +49,7 @@ class DerivativeSquaresAndCubes(Scene):
 ## Animations
 
 
-'''python
+```python
 class DescribeTangentLine(GraphScene):
     CONFIG={
         "func": lambda x:x**3,
@@ -91,4 +91,5 @@ class DescribeTangentLine(GraphScene):
         # remove updater after the animation
         tangent_line.clear_updaters()
         self.remove(dot_end)
-'''
+```
+
