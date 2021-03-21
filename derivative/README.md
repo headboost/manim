@@ -1,9 +1,9 @@
 
 
 
-## Objects
+# Objects
 
-### DerivativeSquaresArea()
+## DerivativeSquaresArea()
 
 ```python
 class DerivativeSquaresAndCubes(Scene):
@@ -14,7 +14,7 @@ class DerivativeSquaresAndCubes(Scene):
 
 ![DerivativeSquaresAndCubes](https://user-images.githubusercontent.com/80928294/111724064-ebaf9200-88a7-11eb-94fb-65f39d043954.png)
 
-### DerivativeSquaresAreaSplitted()
+## DerivativeSquaresAreaSplitted()
 
 ```python
 class DerivativeSquaresAndCubes(Scene):
@@ -25,7 +25,7 @@ class DerivativeSquaresAndCubes(Scene):
 
 ![DerivativeSquaresAndCubes](https://user-images.githubusercontent.com/80928294/111724501-b5bedd80-88a8-11eb-90a0-608eb2a94b2e.png)
 
-### DerivativeCubeVolume()
+## DerivativeCubeVolume()
 
 ```python
 class DerivativeSquaresAndCubes(ThreeDScene):
@@ -37,7 +37,7 @@ class DerivativeSquaresAndCubes(ThreeDScene):
 ![DerivativeCubes](https://user-images.githubusercontent.com/80928294/111894343-7b427580-8a4d-11eb-92ef-e5b9c8007800.png)
 
 
-### DerivativeCubeVolumeSplitted()
+## DerivativeCubeVolumeSplitted()
 
 ```python
 class DerivativeSquaresAndCubes(ThreeDScene):
@@ -49,9 +49,9 @@ class DerivativeSquaresAndCubes(ThreeDScene):
 ![DerivativeCubesSplitetted](https://user-images.githubusercontent.com/80928294/111894348-8a292800-8a4d-11eb-99c6-20d4f0b3ffe7.png)
 
 
-## Animations
+# Animations
 
-# Area
+## split_derivative_rectangles()
 ```python
 class SplitDerivativeRectangles(Scene):
     def construct(self):
@@ -80,8 +80,7 @@ class SplitDerivativeRectangles(Scene):
 
 ![SplitDerivativeRectangles](https://user-images.githubusercontent.com/80928294/111894401-d70cfe80-8a4d-11eb-9396-8b13480d40b6.gif)
 
-
-# Cube
+## split_derivative_cubes()
 
 ```python
 class SplitDerivativeCubes(ThreeDScene):
