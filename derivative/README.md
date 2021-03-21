@@ -93,3 +93,6 @@ class DescribeTangentLine(GraphScene):
         self.remove(dot_end)
 ```
 
+![DescribeTangentLine](https://user-images.githubusercontent.com/80928294/111892378-4b3fa600-8a3e-11eb-9216-e886da5fa818.gif)
+
+
