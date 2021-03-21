@@ -1,4 +1,4 @@
-#  derivative.py
+
 
 
 ## Objects
@@ -28,25 +28,89 @@ class DerivativeSquaresAndCubes(Scene):
 ### DerivativeCubeVolume()
 
 ```python
-class DerivativeSquaresAndCubes(Scene):
+class DerivativeSquaresAndCubes(ThreeDScene):
     def construct(self):
         mob=DerivativeCubeVolume()
         self.add(mob)
 ```
 
-![DerivativeSquaresAndCubes](https://user-images.githubusercontent.com/80928294/111724735-1f3eec00-88a9-11eb-8375-2a2476e7afe4.png)
+![DerivativeCubes](https://user-images.githubusercontent.com/80928294/111894343-7b427580-8a4d-11eb-92ef-e5b9c8007800.png)
+
 
 ### DerivativeCubeVolumeSplitted()
 
 ```python
-class DerivativeSquaresAndCubes(Scene):
+class DerivativeSquaresAndCubes(ThreeDScene):
     def construct(self):
         mob=DerivativeCubeVolumeSplitted()
         self.add(mob)
 ```
-![DerivativeSquaresAndCubes](https://user-images.githubusercontent.com/80928294/111724779-35e54300-88a9-11eb-8784-a01621b825e9.png)
+
+![DerivativeCubesSplitetted](https://user-images.githubusercontent.com/80928294/111894348-8a292800-8a4d-11eb-99c6-20d4f0b3ffe7.png)
+
 
 ## Animations
+
+# Area
+```python
+class SplitDerivativeRectangles(Scene):
+    def construct(self):
+        self.split_derivative_rectangles(split_factor=0.2)
+
+    def split_derivative_rectangles(self, split_factor=0.2, scale_factor=1, position=[0,0,0]):
+        obj=DerivativeSquaresArea().move_to(position).scale(scale_factor)
+        o,r,u,dx = obj.squares        
+        b_u, l_u, b_r, l_r = obj.braces_and_labels
+        dx_bs_ls = obj.dx_braces_and_labels
+        
+        self.play(FadeIn(o))
+        self.play(FadeIn(r), FadeIn(u), FadeIn(dx), FadeIn(obj.braces_and_labels), FadeIn(obj.dx_braces_and_labels))
+        self.play(
+            r.shift, split_factor*RIGHT,
+            u.shift, split_factor*UP,
+            dx.shift, split_factor*UP+split_factor*RIGHT,
+            b_u.shift, split_factor*UP,
+            l_u.shift, split_factor*UP,
+            b_r.shift, split_factor*RIGHT,
+            l_r.shift, split_factor*RIGHT,
+            dx_bs_ls.shift, split_factor*UP+split_factor*RIGHT,
+
+            )
+```
+
+![SplitDerivativeRectangles](https://user-images.githubusercontent.com/80928294/111894401-d70cfe80-8a4d-11eb-9396-8b13480d40b6.gif)
+
+
+# Cube
+
+```python
+class SplitDerivativeCubes(ThreeDScene):
+    def construct(self):
+        self.split_derivative_cubes()
+
+    def split_derivative_cubes(self, split_factor=0.2, scale_factor=1, position=[0,0,0]):
+        obj=DerivativeCubeVolume().move_to(position)
+        cube, cube_f, cube_t, cube_r, bar_f, bar_t, bar_r, cube_dx = obj.cubes
+        br_cube, lab_cube, br_cube_t, lab_cube_t = obj.braces_and_labels
+
+        self.add(obj)
+        self.play(
+            cube_f.shift, 0.2*DOWN+0.2*RIGHT,
+            cube_t.shift, 0.4*UP,
+            cube_r.shift, 0.6*RIGHT,
+            bar_f.shift, 0.25*UP+0.25*RIGHT,
+            bar_t.shift, 0.5*UP+0.6*RIGHT,
+            bar_r.shift, 1.*RIGHT,
+            cube_dx.shift, 0.2*UP+1.*RIGHT,
+            br_cube_t.shift, 0.4*UP, 
+            lab_cube_t.shift, 0.4*UP,
+            )
+```
+
+![SplitDerivativeCubes](https://user-images.githubusercontent.com/80928294/111894427-f441cd00-8a4d-11eb-8599-33fb468ad3cb.gif)
+
+
+
 
 
 ```python
