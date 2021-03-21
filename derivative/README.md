@@ -49,4 +49,46 @@ class DerivativeSquaresAndCubes(Scene):
 ## Animations
 
 
+'''python
+class DescribeTangentLine(GraphScene):
+    CONFIG={
+        "func": lambda x:x**3,
+        "d_func": lambda x:3*x**2,
+        "stroke_width":2,
+        "dot_radius": 0.05,
+        "tangent_line_color": YELLOW,
+        "length_of_tangentline": 8,
+        }
+    def construct(self):
+        self.setup_axes()
+        # define a curve
+        curveA=self.get_graph(
+            self.func,
+            stroke_width=self.stroke_width,
+            )
+        # define two dots on the curve
+        dot_start=Dot(radius=self.dot_radius).move_to(self.coords_to_point(0,self.func(0)))
+        dot_end=Dot(radius=self.dot_radius).move_to(self.coords_to_point(1,self.func(1)))
+        # draw line between two dots
+        tangent_line=self.get_line_across_points(
+            dot_start,
+            dot_end,
+            color=self.tangent_line_color,
+            stroke_width=self.stroke_width,
+            length=self.length_of_tangentline
+            )
+        # add updater to the line above
+        tangent_line.add_updater(self.get_line_updater(dot_start, dot_end, length=self.length_of_tangentline))
 
+        self.add(curveA, tangent_line, dot_start, dot_end)
+        self.move_dot(
+            dot_end,  # put a dot to move
+            1,             # where a dot starts from
+            0.0001,        # where a dot to go
+            run_time=5
+            )
+
+        # remove updater after the animation
+        tangent_line.clear_updaters()
+        self.remove(dot_end)
+'''
